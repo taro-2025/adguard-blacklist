@@ -2,27 +2,26 @@ name: Update Blacklist
 
 on:
   schedule:
-    - cron: "0 3 * * *"  # 毎日朝12時（日本時間）に実行
-  workflow_dispatch:      # 手動実行も可
+    - cron: '0 3 * * *'  # 毎日午前3時（JSTでは12時）
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Generate blacklist
+      - name: Update blacklist
         run: |
-          echo '||sentry.io^' > adguard_blacklist.txt
-          echo '||doubleclick.net^' >> adguard_blacklist.txt
-          echo '||tiktokv.com^' >> adguard_blacklist.txt
-          echo '||googletagmanager.com^' >> adguard_blacklist.txt
-          echo '||graph.facebook.com^' >> adguard_blacklist.txt
+          echo "||sentey.google.com^" > adguard_blacklist.txt
+          echo "||doubleclick.net^" >> adguard_blacklist.txt
+          echo "||ttkmanager.com^" >> adguard_blacklist.txt
+          echo "||facebook.com^" >> adguard_blacklist.txt
 
       - name: Commit changes
         run: |
-          git config user.name 'github-actions'
-          git config user.email 'actions@github.com'
-          git commit -am "auto: update blacklist" || echo "No changes"
+          git config user.name github-actions
+          git config user.email actions@github.com
+          git commit -am "auto: update blacklist [`date '+%Y-%m-%d %H:%M:%S'`]" || echo "No changes to commit"
           git push
