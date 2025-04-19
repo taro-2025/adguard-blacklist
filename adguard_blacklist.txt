@@ -1,4 +1,13 @@
-
+||newrelic.com^
+||perimeterx.net^
+||tealiumiq.com^
+||trustarc.com^
+||taboola.com^
+||outbrain.com^
+||revcontent.com^
+||contextweb.com^
+||pubmatic.com^
+||openx.net^
 oauthaccountmanager.googleapis.com
 notifications-pa.googleapis.com
 safebrowsing.googleapis.com
