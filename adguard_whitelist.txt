@@ -24,3 +24,9 @@
 @@||adjust.com^
 @@||app.adjust.com^
 @@||ads.mopub.com^
+@@||apple.com^
+@@||icloud.com^
+@@||openai.com^
+@@||chatgpt.com^
+@@||oaiusercontent.com^
+@@||revenuecat.com^
